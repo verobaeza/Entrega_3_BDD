@@ -18,7 +18,7 @@
             $result -> execute();
             $result -> fetchAll();
         } catch (Exception $e) {
-            echo "No se pudieron importar los artistas"
+            echo "No se pudieron importar los artistas";
         }
     }    
 ?>
