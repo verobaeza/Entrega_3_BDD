@@ -1,7 +1,7 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-importar_usuarios(id int, nombre varchar(100), tipo)
+importar_usuarios(user_id int, nombre varchar(100), tipo)
 
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS BOOLEAN AS $$
@@ -17,9 +17,9 @@ BEGIN
 
     IF id NOT IN (SELECT id FROM usuarios) THEN
         IF tipo = 'artista' THEN
-            INSERT INTO usuarios VALUES(id, REPLACE(nombre, ' ', ''), 'a', 'artista');
+            INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', ''), 'a', 'artista');
         ELSIF tipo = 'productora' THEN
-            INSERT INTO usuarios VALUES(id, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
+            INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
 
         RETURN TRUE;
     ELSE
