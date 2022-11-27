@@ -15,7 +15,7 @@ tipo;
 -- definimos nuestra función
 BEGIN
 
-    IF id NOT IN (SELECT id FROM usuarios) THEN
+    IF id NOT IN (SELECT aid FROM usuarios) THEN
         IF tipo = 'artista' THEN
             INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', ''), 'a', 'artista');
         ELSIF tipo = 'productora' THEN
