@@ -11,7 +11,6 @@
 
     foreach ($artistas as $artista){
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, 'artista'::varchar);";
-        echo "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, 'artista'::varchar);";
         // Ejecutamos las querys para efectivamente insertar los datos
         
         $result = $db1 -> prepare($query);
