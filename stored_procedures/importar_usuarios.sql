@@ -1,14 +1,14 @@
 CREATE OR REPLACE FUNCTION
 
 -- declaramos la función y sus argumentos
-importar_usuarios (id int, nombre varchar(100), tipo)
+importar_usuarios (id int, nombre varchar(100), tipo varchar(10))
 
 -- declaramos lo que retorna, en este caso un booleano
 RETURNS BOOLEAN AS $$
 
 -- declaramos las variables a utilizar si es que es necesario
-DECLARE
-clave;
+-- DECLARE
+-- clave;
 -- definimos nuestra función
 BEGIN
 
