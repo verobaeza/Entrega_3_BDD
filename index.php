@@ -8,7 +8,7 @@
 
 
     <h3 align="center"> Importar usuarios </h3>
-    <form align="center" action="consultas/consulta_entregar_nombre_telefono_artistas.php" method="post">
+    <form align="center" action="queries/importar_usuarios.php" method="post">
         <input class='btn' type="submit" value="Importar">
     </form>
 

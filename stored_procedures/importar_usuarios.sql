@@ -8,7 +8,6 @@ RETURNS BOOLEAN AS $$
 
 -- declaramos las variables a utilizar si es que es necesario
 DECLARE
-nuevo_nombre;
 clave;
 tipo;
 
