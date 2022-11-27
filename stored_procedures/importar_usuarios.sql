@@ -9,16 +9,14 @@ RETURNS BOOLEAN AS $$
 -- declaramos las variables a utilizar si es que es necesario
 DECLARE
 clave;
-tipo;
-
 -- definimos nuestra función
 BEGIN
 
     IF user_id NOT IN (SELECT user_id FROM usuarios) THEN
         IF tipo = 'artista' THEN
             INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', ''), 'a', 'artista');
-        ELSIF tipo = 'productora' THEN
-            INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
+        -- ELSIF tipo = 'productora' THEN
+        --    INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
 
         RETURN TRUE;
     ELSE
