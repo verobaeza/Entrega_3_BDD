@@ -13,4 +13,5 @@
         $query = "SELECT importar_usuarios($artista[0], $artista[1], 'artista');";
     }
     
-    ?>
+?>
+    
