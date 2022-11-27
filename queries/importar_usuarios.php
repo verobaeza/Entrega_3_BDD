@@ -18,5 +18,34 @@
         $result -> fetchAll();
 
     }    
+    $query = "SELECT * FROM usuarios;";
+    $result = $db1 -> prepare($query);
+    $result -> execute();
+    $usuarios = $result -> fetchAll();
+
 ?>
-    
+    <body>  
+        <table class='table'>
+            <thead>
+                <tr>
+                <th>user_id</th>
+                <th>nombre_usuario</th>
+                <th>clave</th>
+                <th>tipo</th>    
+                <tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($usuarios as $usuario) {
+                    echo "<tr>";
+                    echo "<td>$usuario[0]</td>";
+                    echo "<td>$usuario[1]</td>";
+                    echo "<td>$usuario[2]</td>";
+                    echo "<td>$usuario[3]</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>   
+    </body>
+</html>         
