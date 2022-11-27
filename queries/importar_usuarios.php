@@ -4,7 +4,7 @@
     require("../config/conexion.php");
 
     // Primero obtenemos todos los pokemons de la tabla que queremos agregar
-    $query = "SELECT * FROM usuarios ;";
+    $query = "SELECT * FROM artistas ;";
     $result = $db1 -> prepare($query); # Se conecta a la BDD impar
     $result -> execute();
     $artistas = $result -> fetchAll();
