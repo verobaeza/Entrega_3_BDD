@@ -13,13 +13,11 @@
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, 'artista'::varchar);";
     
         // Ejecutamos las querys para efectivamente insertar los datos
-        try{
-            $result = $db1 -> prepare($query);
-            $result -> execute();
-            $result -> fetchAll();
-        } catch (Exception $e) {
-            echo "No se pudieron importar los artistas";
-        }
+        
+        $result = $db1 -> prepare($query);
+        $result -> execute();
+        $result -> fetchAll();
+
     }    
 ?>
     
