@@ -13,7 +13,7 @@ clave;
 BEGIN
 
     IF id NOT IN (SELECT user_id FROM usuarios) AND tipo = 'artista' THEN
-            INSERT INTO usuarios VALUES(id, REPLACE(nombre, ' ', ''), 'a', 'artista');
+            INSERT INTO usuarios values(id, nombre, 'a', 'artista');
         -- ELSIF tipo = 'productora' THEN
         --    INSERT INTO usuarios VALUES(user_id, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
 
