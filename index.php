@@ -1,4 +1,4 @@
-<?php include('templatesihn/header.html'); ?>
+<?php?>
 <body>
     <h1 align="center"> Entrega 2 Bases de datos </h1>
     <h3 align="center"> Verónica Baeza - Ignacio Henríquez Novoa </h3>
