@@ -13,7 +13,7 @@ RETURNS BOOLEAN AS $$
 BEGIN
 
     IF id NOT IN (SELECT user_id FROM usuarios) AND tipo = 'artista' THEN
-            INSERT INTO usuarios(user_id, nombre_usuario, clave, tipo) values(id, nombre, 'a', 'artista');
+            INSERT INTO usuarios(user_id, nombre_usuario, clave, tipo) values(id, nombre, 'a', tipo);
         -- ELSIF tipo = 'productora' THEN
         --    INSERT INTO usuarios VALUES(, REPLACE(nombre, ' ', '_'), 'a'. 'productora');
 
