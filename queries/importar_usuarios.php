@@ -10,7 +10,10 @@
     $artistas = $result -> fetchAll();
 
     foreach ($artistas as $artista){
-        $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, artista);";
+        $query = "SELECT importar_usuarios ($artista[0], $artista[1], 'artista');";
+        echo gettype($artista[0]) . "<br>";
+        echo gettype($artista[1]) . "<br>";
+        echo gettype('artista') . "<br>";
         // Ejecutamos las querys para efectivamente insertar los datos
         
         $result = $db1 -> prepare($query);
