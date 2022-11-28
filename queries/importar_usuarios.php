@@ -25,7 +25,7 @@
     }    
 
     // IMPORTAR PRODUCTORAS ----------------------------------------------------------------------------
-    $query = "SELECT * FROM productoras;" # Obtenemos todas las productoras
+    $query = "SELECT * FROM productoras;"; # Obtenemos todas las productoras
     $result = $db2 -> prepare($query); # Nos conectamos a la BDD par
     $result -> execute();
     $productoras = $result -> fetchAll();
