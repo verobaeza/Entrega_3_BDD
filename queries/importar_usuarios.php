@@ -31,9 +31,9 @@
 
     foreach($productoras as $productora){
         $query = "SELECT importar_usuarios ($productora[0], '$productora[1]'::varchar, '$tipo'::varchar, '$productora[2]'::varchar);";
-        echo $productora[0] "<br>";
-        echo $productora[1] "<br>";
-        echo $productora[2] "<br>";
+        echo "$productora[0] <br>";
+        echo "$productora[1] <br>";
+        echo "$productora[2] <br>";
         $result = $db1 -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
