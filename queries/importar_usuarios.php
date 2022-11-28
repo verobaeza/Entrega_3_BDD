@@ -8,7 +8,7 @@
     $result = $db1 -> prepare($query); # Se conecta a la BDD impar
     $result -> execute();
     $artistas = $result -> fetchAll();
-    $tipo = 'artista'
+    $tipo = 'artista';
 
     foreach ($artistas as $artista){
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, $tipo::varchar);";
