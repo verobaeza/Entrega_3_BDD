@@ -1,6 +1,6 @@
 <?php
 
-    // Nos conectamos a las bdds
+    # Nos conectamos a las bdds
     require("../config/conexion.php");
 
     
@@ -12,16 +12,19 @@
 
     foreach ($artistas as $artista){
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, '$tipo'::varchar);";
-        echo gettype($artista[0]) . "<br>";
-        echo gettype($artista[1]) . "<br>";
-        echo gettype($tipo) . "<br>";
-        // Ejecutamos las querys para efectivamente insertar los datos
-        
+        #echo gettype($artista[0]) . "<br>";
+        #echo gettype($artista[1]) . "<br>";
+        #echo gettype($tipo) . "<br>";
+
+        # Ejecutamos las querys para efectivamente insertar los datos en la bdd impar        
         $result = $db1 -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
 
     }    
+
+
+    # DE AQUI EN ADELANTE BORRAR ANTES DE LA ENTREGA!!!!!! ES SOLO PARA OBSERVAR LOS DATOS EN LA PÁGINA
     $query = "SELECT * FROM usuarios;";
     $result = $db1 -> prepare($query);
     $result -> execute();
