@@ -1,30 +1,50 @@
 <?php
 
-    # Nos conectamos a las bdds
+    // Nos conectamos a las bdds
     require("../config/conexion.php");
 
-    
+    // IMPORTAR ARTISTAS ----------------------------------------------------------------------------
     $query = "SELECT * FROM artistas;"; # Obtenemos todos los artistas
-    $result = $db1 -> prepare($query); # Se conecta a la BDD impar
+    $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $artistas = $result -> fetchAll();
     $tipo = 'artista';
+    $pais = '';
 
     foreach ($artistas as $artista){
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, '$tipo'::varchar);";
         #echo gettype($artista[0]) . "<br>";
         #echo gettype($artista[1]) . "<br>";
         #echo gettype($tipo) . "<br>";
-
-        # Ejecutamos las querys para efectivamente insertar los datos en la bdd impar        
+        // Ejecutamos las querys para efectivamente insertar los datos
+        
         $result = $db1 -> prepare($query);
         $result -> execute();
         $result -> fetchAll();
 
     }    
 
+    // IMPORTAR PRODUCTORAS ----------------------------------------------------------------------------
+    $query = "SELECT * FROM productoras;" # Obtenemos todas las productoras
+    $result = $db2 -> prepare($query); # Nos conectamos a la BDD par
+    $result -> execute();
+    $productoras = $result -> fetchAll();
+    $tipo = 'productora';
 
-    # DE AQUI EN ADELANTE BORRAR ANTES DE LA ENTREGA!!!!!! ES SOLO PARA OBSERVAR LOS DATOS EN LA PÁGINA
+    foreach($productoras as $productora){
+        $query = "SELECT importar_usuarios ($productora[0], '$productora[1]'::varchar, '$tipo'::varchar, '$productora[2]'::varchar);";
+        #echo gettype($productora[0]) . "<br>";
+        #echo gettype($productora[1]) . "<br>";
+        #echo gettype($productora[2]) . "<br>";
+        $result = $db1 -> prepare($query);
+        $result -> execute();
+        $result -> fetchAll();
+
+
+    }
+
+
+    # ESTO ES PARA VISUALIZAR SI LA TABLA USUARIOS SE LLENÓ CORRECTAMENTE
     $query = "SELECT * FROM usuarios;";
     $result = $db1 -> prepare($query);
     $result -> execute();
