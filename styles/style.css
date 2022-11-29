@@ -15,6 +15,14 @@ body{
     font-size: xxx-large;
 }
 
+.subtitle{
+    margin: 0%;
+    padding: 3%;
+    text-align: center;
+    line-height: normal;
+    font-size: xx-large;
+}
+
 .container{
     text-align: center;
     padding: 2%;
