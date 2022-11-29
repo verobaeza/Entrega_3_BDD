@@ -18,7 +18,9 @@
         # echo " $nombre_ingresado, $clave_ingresada";
         $result = $db1 -> prepare($query); # Enviamos la consulta a la BDD impar
         $result -> execute();
-        $usuario = $result;
+        $usuarios = $result -> fetchAll();
+
+        echo "$usuarios";
 
         if (!empty($usuario)){
             echo "$usuario[3]";
