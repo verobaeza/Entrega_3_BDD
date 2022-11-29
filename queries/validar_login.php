@@ -23,13 +23,11 @@
         foreach($usuarios as $usuario){
             if (!empty($usuario)){
                 if ($usuario[3] == 'artista'){
-                    # echo "pagina_artista.php"; # REDIRIGIR A PÁGINA DE ARTISTA
-                    header("Location:./pagina_artista.php"); 
+                    header("Location:./pagina_artistas.php"); 
                     exit;
                 }
                 elseif ($usuario[3] == 'productora'){
-                    # echo "pagina_productora.php"; # REDIRIGIR A PÁGINA DE PRODUCTORA
-                    header("Location:./pagina_productora.php"); 
+                    header("Location:./pagina_productoras.php"); 
                     exit;
                 }
             
