@@ -1,4 +1,8 @@
-<?php include('../templates/header.html');   ?>
+<?php 
+include('../templates/header.html');   
+session_start();
+?>
+
 <body>
     <h1 align="center"> Bienvenid@ a la página para artistas! </h1>
 </body>
@@ -9,10 +13,10 @@
     // Nos conectamos a las bdds
     require("../config/conexion.php");
     include('../templates/header.html');
-    $usuario = $_POST['nombre_ingresado'];
+    $usuario = $_SESSION['nombre_ingresado'];
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
-    $query = "SELECT evento, recinto, fecha_inicio FROM artistas WHERE ID = (SELECT aid FROM artistas WHERE aid = (SELECT ref_id WHERE nombre_usuario = $Usuario);"; 
+    $query = "SELECT evento, recinto, fecha_inicio FROM artistas WHERE ID = (SELECT aid FROM artistas WHERE aid = (SELECT ref_id WHERE nombre_usuario = $usuario);"; 
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $eventos = $result -> fetchAll();
