@@ -14,7 +14,9 @@
 
     foreach ($artistas as $artista){
         $query = "SELECT importar_usuarios ($artista[0], '$artista[1]'::varchar, '$tipo'::varchar, '$pais'::varchar);";
-
+        echo "$artista[0] <br>";
+        echo "$artista[1] <br>";
+        echo "$artista[2] <br>";
         // Ejecutamos las querys para efectivamente insertar los datos
         
         $result = $db1 -> prepare($query);
@@ -57,8 +59,7 @@
                 <th>user_id</th>
                 <th>nombre_usuario</th>
                 <th>clave</th>
-                <th>tipo</th>
-                   
+                <th>tipo</th>    
                 <tr>
             </thead>
             <tbody>
@@ -69,7 +70,6 @@
                     echo "<td>$usuario[1]</td>";
                     echo "<td>$usuario[2]</td>";
                     echo "<td>$usuario[3]</td>";
-                    
                     echo "</tr>";
                 }
                 ?>
