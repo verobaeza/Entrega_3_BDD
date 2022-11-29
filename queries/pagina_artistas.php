@@ -44,7 +44,7 @@ session_start();
                     $result -> execute();
                     $tours = $result -> fetchAll();
 
-                    foreach($tours as $tour){echo "<td>$tour[2]</td>";};
+                    foreach($tours as $tour){echo "<td>$tour[0]</td>";};
 
                     echo "</tr>";
                 }
