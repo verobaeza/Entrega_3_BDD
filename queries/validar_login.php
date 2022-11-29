@@ -20,12 +20,13 @@
         $usuario = $result -> fetchAll();
 
         if (!empty($usuario)){
-            if ($usuario[3] = 'artista'){
-                echo "pagina_artista.php";
-            }
-            elseif ($usuario[3] = 'productora'){
-                echo "pagina_productora.php";
-            }
+            echo "$usuario[3]"
+            #if ($usuario[3] = 'artista'){
+            #    echo "pagina_artista.php";
+            #}
+            #elseif ($usuario[3] = 'productora'){
+            #    echo "pagina_productora.php";
+            #}
         }
 
         #$msg = "Sesión iniciada correctamente";
