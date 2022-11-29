@@ -8,7 +8,7 @@
     if (isset($_POST['login']) && !empty($_POST['nombre_ingresado']) && !empty($_POST['clave_ingresada']))
     {
         $nombre_ingresado = $_POST['nombre_ingresado'];
-        $clave_ingresada = $_POST['password'];
+        $clave_ingresada = $_POST['clave_ingresada'];
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
         $_SESSION['nombre_ingresado'] = $_POST['nombre_ingresado'];
