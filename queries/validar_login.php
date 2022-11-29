@@ -22,7 +22,7 @@
 
         foreach($usuarios as $usuario){
             if (!empty($usuario)){
-                echo "$usuario[3]"
+                echo "$usuario[3]";
                 if ($usuario[3] = 'artista'){
                     echo "pagina_artista.php";
                 }
