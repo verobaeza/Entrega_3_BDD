@@ -30,7 +30,7 @@
                 }
             
             }
-        if ($empty($usuarios)){
+        if (!$usuarios){
             echo "Usuario no registrado.";
         }
         }
