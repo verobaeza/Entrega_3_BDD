@@ -14,16 +14,16 @@
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
 
-        $query = "SELECT nombre_usuario, clave, tipo FROM usuarios WHERE nombre_usuario = $_SESSION['username'] AND clave = $_SESSION['password'];"; 
+        $query = "SELECT * FROM usuarios WHERE nombre_usuario = $_POST['username'] AND clave = $_POST['password'];"; 
         $result = $db1 -> prepare($query); # Enviamos la consulta a la BDD impar
         $result -> execute();
         $usuario = $result -> fetchAll();
 
         if !empty($usuario){
-            if $usuario[2] = 'artista'{
+            if $usuario[3] = 'artista'{
                 header("pagina_artista.php");
             }
-            elseif $usuario[2] = 'productora'{
+            elseif $usuario[3] = 'productora'{
                 header("pagina_productora.php");
             }
         }
