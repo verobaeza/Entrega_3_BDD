@@ -10,7 +10,7 @@
     <br>
     <h3 align="center"> Iniciar sesión </h3>
 	<br>
-    <form class="form-signin" role="form" action="./queries/validar_login.php" method="post">
+    <form align="center" class="form-signin" role="form" action="./queries/validar_login.php" method="post">
         <input type="text" name="username" placeholder="Nombre usuario" required autofocus>
         <input type="password" name="password" placeholder="Clave" required>
         <button type="submit" name="login"> Ingresar </button>

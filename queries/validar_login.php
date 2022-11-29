@@ -21,10 +21,10 @@
 
         if !empty($usuario){
             if $usuario[2] = 'artista'{
-                header("pagina_artista.php")
+                header("pagina_artista.php");
             }
             elseif $usuario[2] = 'productora'{
-                header("pagina_productora.php")
+                header("pagina_productora.php");
             }
         }
 
