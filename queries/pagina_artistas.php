@@ -16,7 +16,7 @@ session_start();
     $usuario = $_SESSION['nombre_ingresado'];
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
-    $query = "SELECT evento, recinto, fecha_inicio FROM eventos WHERE ID = (SELECT aid FROM artistas WHERE aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = $usuario);"; 
+    $query = "SELECT evento, recinto, fecha_inicio FROM eventos WHERE eid = (SELECT aid FROM artistas WHERE aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = $usuario);"; 
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $eventos = $result -> fetchAll();
