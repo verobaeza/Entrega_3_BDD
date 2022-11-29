@@ -59,7 +59,8 @@
                 <th>user_id</th>
                 <th>nombre_usuario</th>
                 <th>clave</th>
-                <th>tipo</th>    
+                <th>tipo</th>  
+                <th>ref_id</th>  
                 <tr>
             </thead>
             <tbody>
@@ -70,6 +71,7 @@
                     echo "<td>$usuario[1]</td>";
                     echo "<td>$usuario[2]</td>";
                     echo "<td>$usuario[3]</td>";
+                    echo "<td>$usuario[4]</td>";
                     echo "</tr>";
                 }
                 ?>
