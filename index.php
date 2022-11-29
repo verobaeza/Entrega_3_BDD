@@ -1,4 +1,4 @@
-<?php include('./templates/header.html');   ?>
+<?php include('templates/header.html');   ?>
 <body>
     <h1 align="center"> Entrega 3 - Bases de Datos </h1>
     <h3 align="center"> Grupos 107 y 116 </h3>
