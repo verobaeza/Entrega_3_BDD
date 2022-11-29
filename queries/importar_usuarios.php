@@ -68,6 +68,7 @@
                     echo "<td>$usuario[1]</td>";
                     echo "<td>$usuario[2]</td>";
                     echo "<td>$usuario[3]</td>";
+                    echo "<td>$usuario[4]</td>";
                     echo "</tr>";
                 }
                 ?>
