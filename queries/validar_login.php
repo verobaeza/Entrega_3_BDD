@@ -28,10 +28,11 @@
                 elseif ($usuario[3] == 'productora'){
                     echo "pagina_productora.php"; # REDIRIGIR A PÁGINA DE PRODUCTORA
                 }
-            else{
-                echo "Usuario no registrado.";
+            
             }
-            }
+        if ($empty($usuarios)){
+            echo "Usuario no registrado.";
+        }
         }
 
 
