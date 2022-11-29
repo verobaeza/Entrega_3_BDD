@@ -46,7 +46,7 @@ session_start();
                     echo "<td>$evento[0]</td>";
                     echo "<td>$evento[1]</td>";
                     echo "<td>$evento[2]</td>";
-                    foreach($eventos2 as $tour){echo "<td>$tour[2]</td>"};
+                    foreach($eventos2 as $tour){echo "<td>$tour[2]</td>";};
                     echo "</tr>";
                 }
                 ?>
