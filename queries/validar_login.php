@@ -23,10 +23,10 @@
         foreach($usuarios as $usuario){
             if (!empty($usuario)){
                 echo "$usuario[3]";
-                if ($usuario[3] = 'artista'){
+                if ($usuario[3] == 'artista'){
                     echo "pagina_artista.php";
                 }
-                elseif ($usuario[3] = 'productora'){
+                elseif ($usuario[3] == 'productora'){
                     echo "pagina_productora.php";
                 }
             }
