@@ -39,7 +39,7 @@ session_start();
                     echo "<td>$evento[0]</td>";
                     echo "<td>$evento[1]</td>";
                     echo "<td>$evento[2]</td>";
-                    $query = "SELECT tours FROM tours WHERE tours.nombre = '$evento[0]'::varchar";
+                    $query = "SELECT tours.nombre FROM tours WHERE tours.nombre = '$evento[0]'::varchar";
                     $result = $db1 -> prepare($query);
                     $result -> execute();
                     $tours = $result -> fetchAll();
