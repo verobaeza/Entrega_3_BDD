@@ -16,7 +16,7 @@ session_start();
     $usuario = $_SESSION['nombre_ingresado'];
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
-    $query = "SELECT eventos.evento, eventos.recinto, eventos.fecha_inicio, tours.nombre FROM eventos, tours WHERE eventos.aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar) AND eventos.evento = tours.nombre;"; 
+    $query = "SELECT evento, recinto, fecha_inicio FROM eventos WHERE eventos.aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar);"; 
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $eventos1 = $result -> fetchAll(); # PRIMER RESULTADO
@@ -39,7 +39,12 @@ session_start();
                     echo "<td>$evento[0]</td>";
                     echo "<td>$evento[1]</td>";
                     echo "<td>$evento[2]</td>";
-                    echo "<td>$evento[3]</td>";
+
+                    $query = "SELECT tours.nombre FROM tours, eventos WHERE tours.nombre = '$evento[0]'::varchar;";
+                    $result = $db2 -> prepare($query);
+                    $result -> execute();
+                    $tours = $result -> fetchAll("<td>$tour[0]</td>";);
+
                     echo "</tr>";
                 }
                 ?>
