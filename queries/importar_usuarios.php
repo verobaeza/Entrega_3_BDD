@@ -2,6 +2,7 @@
 
     // Nos conectamos a las bdds
     require("../config/conexion.php");
+    include('../templates/header.html');
 
     // IMPORTAR ARTISTAS ----------------------------------------------------------------------------
     $query = "SELECT * FROM artistas;"; # Obtenemos todos los artistas
