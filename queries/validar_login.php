@@ -14,7 +14,7 @@
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
 
-        $query = "SELECT nombre_usuario, clave, tipo FROM usuarios WHERE nombre_usuario = $_SESSION['username'] AND clave = $_SESSION['password']"; 
+        $query = "SELECT nombre_usuario, clave, tipo FROM usuarios WHERE nombre_usuario = $_SESSION['username'] AND clave = $_SESSION['password'];"; 
         $result = $db1 -> prepare($query); # Enviamos la consulta a la BDD impar
         $result -> execute();
         $usuario = $result -> fetchAll();
