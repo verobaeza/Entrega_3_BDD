@@ -22,13 +22,15 @@
 
         foreach($usuarios as $usuario){
             if (!empty($usuario)){
-                echo "$usuario[3]";
                 if ($usuario[3] == 'artista'){
-                    echo "pagina_artista.php";
+                    echo "pagina_artista.php"; # REDIRIGIR A PÁGINA DE ARTISTA
                 }
                 elseif ($usuario[3] == 'productora'){
-                    echo "pagina_productora.php";
+                    echo "pagina_productora.php"; # REDIRIGIR A PÁGINA DE PRODUCTORA
                 }
+            else{
+                echo "Usuario no registrado.";
+            }
             }
         }
 
