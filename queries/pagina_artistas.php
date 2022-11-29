@@ -23,7 +23,7 @@ session_start();
 
     // OTROS ARTISTAS QUE PARTICIPAN EN EL EVENTO -------------------------------------------------------------
     // TOUR AL QUE PERTENECE  ---------------------------------------------------------------------------------
-    $query = "SELECT nombre FROM tours WHERE nombre = (SELECT evento FROM eventos WHERE aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar);)"
+    $query = "SELECT nombre FROM tours WHERE nombre = (SELECT evento FROM eventos WHERE aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar);)";
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $eventos2 = $result -> fetchAll(); # SEGUNDO RESULTADO
