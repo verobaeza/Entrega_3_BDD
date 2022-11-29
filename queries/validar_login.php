@@ -19,7 +19,7 @@
         $result -> execute();
         $usuario = $result -> fetchAll();
 
-        if !empty($usuario){
+        if (!empty($usuario)){
             if $usuario[3] = 'artista'{
                 header("pagina_artista.php");
             }
