@@ -12,7 +12,32 @@
     $usuario = $_POST['nombre_ingresado'];
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
-    $query = "SELECT evento, recinto, fecha_inicio FROM artistas WHERE artista = $_SESSION[];"; # Obtenemos todos los artistas
+    $query = "SELECT evento, recinto, fecha_inicio FROM artistas WHERE ID = (SELECT aid FROM artistas WHERE aid = (SELECT ref_id WHERE nombre_usuario = $Usuario);"; 
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
-    $artistas = $result -> fetchAll();
+    $eventos = $result -> fetchAll();
+
+?>
+    <body>  
+        <table class='table'>
+            <thead>
+                <tr>
+                <th>Evento</th>
+                <th>Recinto</th>
+                <th>Fecha inicio</th>
+                <tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($eventos as $evento) {
+                    echo "<tr>";
+                    echo "<td>$evento[0]</td>";
+                    echo "<td>$evento[1]</td>";
+                    echo "<td>$evento[2]</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>   
+    </body>
+</html>         
