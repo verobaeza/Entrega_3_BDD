@@ -20,10 +20,10 @@
         $usuario = $result -> fetchAll();
 
         if (!empty($usuario)){
-            if $usuario[3] = 'artista'{
+            if ($usuario[3] = 'artista'){
                 header("pagina_artista.php");
             }
-            elseif $usuario[3] = 'productora'{
+            elseif ($usuario[3] = 'productora'){
                 header("pagina_productora.php");
             }
         }
