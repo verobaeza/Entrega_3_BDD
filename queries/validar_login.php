@@ -27,7 +27,7 @@
             #elseif ($usuario[3] = 'productora'){
             #    echo "pagina_productora.php";
             #}
-        }
+            }
 
         #$msg = "Sesión iniciada correctamente";
         #header("Location: ../index.php?msg=$msg");
