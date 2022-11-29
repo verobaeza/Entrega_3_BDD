@@ -9,16 +9,12 @@
     </form>
     <br>
     <h3 align="center"> Iniciar sesión </h3>
-    <form  align="center" action='./queries/iniciar_sesion.php' method='POST'>
-    <div class='form-element'>
-        <label for='name'>Nombre usuario</label>
-        <input type='text' name='nombre_usuario' />
-    </div>
-    <div class='form-element'>
-        <label for='name'>Clave</label>
-        <input type='text' name='clave' />
-    </div>
-    <div class='form-element'>
-        <input class='btn' type="submit" value="Ingresar">
+	<br>
+    <form class="form-signin" role="form" action="./queries/validar_login.php" method="post">
+        <?php echo $msg; ?>
+        <input type="text" name="username" placeholder="Nombre usuario" required autofocus>
+        <input type="password" name="password" placeholder="Clave" required>
+        <button type="submit" name="login"> Ingresar </button>
+    </form>
 </body>
 </html>
