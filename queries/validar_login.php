@@ -21,7 +21,7 @@
         $usuarios = $result -> fetchAll();
 
         foreach($usuarios as $usuario){
-            echo "$usuario"
+            echo "$usuario";
             if (!empty($usuario)){
                 echo "$usuario[3]";
                 #if ($usuario[3] = 'artista'){
