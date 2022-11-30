@@ -60,7 +60,7 @@ session_start();
                     $result -> execute();
                     $otros = $result -> fetchAll();
                     $texto = '';
-                    foreach($otros as $otro){$texto = "{$texto}{- $otro}"};
+                    foreach($otros as $otro){$texto = "{$texto}{- $otro}";};
                     echo "<td>$texto</td>";
 
 
