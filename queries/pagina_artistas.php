@@ -55,7 +55,7 @@ session_start();
 
                     # evento.fecha_inicio = '$evento[2]'::date 
                     $query = "SELECT artistas.nombre FROM artistas, evento, presenta_en WHERE artistas.ida = presenta_en.ida AND evento.ide = presenta_en.ide AND 
-                    evento.nombre = '$evento[0]'::varchar AND artistas.nombre != $nombre_artista;";
+                    evento.nombre = '$evento[0]'::varchar AND artistas.nombre != '$nombre_artista'::varchar;";
                     $result = $db2 -> prepare($query);
                     $result -> execute();
                     $otros = $result -> fetchAll();
