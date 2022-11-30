@@ -15,14 +15,14 @@ session_start();
     include('../templates/header.html');
     $usuario = $_SESSION['nombre_ingresado'];
 
-    // QUERY INICIAL PARA GUARDAR NOMBRE DEL ARTISTA
+    // QUERY INICIAL PARA GUARDAR NOMBRE DEL ARTISTA QUE INICIÓ SESIÓN
     $query = "SELECT nombre_artistico FROM artistas WHERE aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar)";
     $result = $db1 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $result -> fetchAll(); # PRIMER RESULTADO   
     
     foreach($result as $nombre){
-        $nombre_artista = $nombre
+        $nombre_artista = $nombre;
     }
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
