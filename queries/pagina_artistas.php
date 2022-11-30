@@ -24,9 +24,7 @@ session_start();
     
     foreach($result as $nombre){
         $nombre_artista = $nombre[0];
-        echo "$nombre_artista dentro del foreach";
     }
-    echo "$nombre_artista fuera del foreach";
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
     $query = "SELECT evento, recinto, fecha_inicio FROM eventos WHERE eventos.aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar);"; 
@@ -56,8 +54,8 @@ session_start();
                     echo "<td>$evento[2]</td>";
 
                     # evento.fecha_inicio = '$evento[2]'::date 
-                    $query = "SELECT artista.nombre FROM artista, evento, presenta_en WHERE artista.ida = presenta_en.ida AND evento.ide = presenta_en.ide AND 
-                    evento.nombre = '$evento[0]'::varchar AND artista.nombre != $nombre_artista;";
+                    $query = "SELECT artistas.nombre FROM artistas, evento, presenta_en WHERE artistas.ida = presenta_en.ida AND evento.ide = presenta_en.ide AND 
+                    evento.nombre = '$evento[0]'::varchar AND artistas.nombre != $nombre_artista;";
                     $result = $db2 -> prepare($query);
                     $result -> execute();
                     $otros = $result -> fetchAll();
