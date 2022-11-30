@@ -24,8 +24,9 @@ session_start();
     
     foreach($result as $nombre){
         $nombre_artista = $nombre;
+        echo "$nombre_artista dentro del foreach";
     }
-    echo "$nombre_artista";
+    echo "$nombre_artista fuera del foreach";
 
     // EVENTOS, FECHAS Y RECINTOS  ----------------------------------------------------------------------------
     $query = "SELECT evento, recinto, fecha_inicio FROM eventos WHERE eventos.aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar);"; 
