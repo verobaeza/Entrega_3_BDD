@@ -23,7 +23,7 @@ session_start();
     $nombre_artista = '';  
     
     foreach($result as $nombre){
-        $nombre_artista = $nombre;
+        $nombre_artista = $nombre[0];
         echo "$nombre_artista dentro del foreach";
     }
     echo "$nombre_artista fuera del foreach";
