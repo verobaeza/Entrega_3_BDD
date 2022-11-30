@@ -54,12 +54,14 @@ session_start();
                     echo "<td>$evento[2]</td>";
 
                     # evento.fecha_inicio = '$evento[2]'::date 
-                    $query = "SELECT artistas.nombre FROM artistas, evento, presenta_en WHERE artistas.ida = presenta_en.ida AND evento.ide = presenta_en.ide AND 
+                    $query = "SELECT DISTINCT artistas.nombre FROM artistas, evento, presenta_en WHERE artistas.ida = presenta_en.ida AND evento.ide = presenta_en.ide AND 
                     evento.nombre = '$evento[0]'::varchar AND artistas.nombre != '$nombre_artista'::varchar;";
                     $result = $db2 -> prepare($query);
                     $result -> execute();
                     $otros = $result -> fetchAll();
-                    foreach($otros as $otro){echo "<td> - $otro[0]</td>";};
+                    $texto = '';
+                    foreach($otros as $otro){$texto = "{$texto}{- $otro}"};
+                    echo "<td>$texto</td>";
 
 
                     $query = "SELECT nombre FROM tours WHERE nombre = '$evento[0]'::varchar;";
