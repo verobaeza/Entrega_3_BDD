@@ -56,9 +56,9 @@ session_start();
 
                 foreach($results as $datos){
                     echo "<tr>";
-                    echo "<td>pico</td>"; ## nombre
+                    echo "<td>$datos[0]</td>"; ## nombre
                     echo "<td>$datos[1]</td>"; # fecha inicio
-                    #echo "<td>$datos[2]</td>"; # fecha termino
+                    echo "<td>$datos[2]</td>"; # fecha termino
                     echo "</tr>";
                 }
                 ?>
