@@ -32,6 +32,15 @@ session_start();
     $result -> execute();
     $eventos1 = $result -> fetchAll(); # PRIMER RESULTADO
 
+
+    /*--ihn--*/
+    $query = "SELECT * FROM tabla_provisoria_propuestas_ignacioh;";
+    $result = $db1 -> prepare($query);
+    $result = $result -> fetchAll();
+    
+
+    /*--ihn--*/
+
 ?>
     <body>  
         <table class='table'>
@@ -73,11 +82,86 @@ session_start();
                     #$query = "SELECT asiento FROM entradas_cortesia WHERE evento = '$evento[0]'::varchar AND aid = (SELECT ref_id FROM usuarios WHERE nombre_usuario = '$usuario'::varchar;)"
                     #$result = $db1 -> prepare($query);
                     #$result -> execute();
-                    #$entradas = $result -> fetchAll();               
-
+                    #$entradas = $result -> fetchAll();  
+                    
                     echo "</tr>";
                 }
-                ?>
+                ?>    
+
+                    /*--ihn--*/
+                    <h3 align="center">Listado de propuestas de eventos hechas por productoras</h3>
+                    <?php
+                    $query = "SELECT * FROM tabla_ignacio_provisoria_propuestas;";
+                    $result = $db1 -> prepare($query);
+                    $result -> execute();
+                    $dataCollected = $result -> fetchAll();
+
+                    
+                    
+                    ?>
+                    <table>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Nombre Recinto</th>
+                            <th>Ciudad</th>
+                            <th>País</th>
+                            <th>Capacidad</th>
+                        </tr>
+
+                    <?php
+                    foreach ($dataCollected as $p) {
+                        echo "<tr> <td>$p[0]</td> <td>%p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>%p[4]</td> </tr>";
+                    }
+                    ?>
+
+                    <?php
+                    /*ihn: require ya no se deberia colocar porque esta escrito antes*/
+                    $query = "SELECT DISTINCT id FROM tabla_ignacio_provisoria_propuestas;";
+                    $result = $db -> prepare($query);
+                    $result -> execute();
+                    $dataCollected = $result -> fetchAll();
+                    ?>
+
+
+                    <form align="center" method="post">
+                        ¿Qué evento desea aceptar?:
+                        <select name="id">
+                            <?php
+                            foreach ($dataCollected as $d) {
+                                echo "<option value=$d[0]>$d[0]</option>";
+                            }
+                            ?>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Aceptar este evento">
+                    </form>
+                    
+                    
+                    <form align="center" method="post">
+                        ¿Qué evento desea rechazar?:
+                        <select name="id">
+                            <?php
+                            foreach ($dataCollected as $d) {
+                                echo "<option value=$d[0]>$d[0]</option>";
+                            }
+                            ?>
+                        </select>
+                        <br><br>
+                        <input type="submit" value="Rechazar este evento">
+                    </form>
+
+
+
+                    
+
+
+                    </table>
+
+                    
+
+                    /*--ihn--*/
+
+
             </tbody>
         </table>   
     </body>
