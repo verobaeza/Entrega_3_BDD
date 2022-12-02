@@ -34,7 +34,7 @@ session_start();
 
 
 
-    $query = "SELECT  nombre, fecha_inicio FROM evento WHERE idp = '$id_productora';";
+    $query = "SELECT  nombre, fecha_inicio, fecha_termino FROM evento WHERE idp = '$id_productora';";
     $result = $db2 -> prepare($query); # Nos conectamos a a la BDD impar
     $result -> execute();
     $results = $result -> fetchAll(); # PRIMER RESULTADO 
