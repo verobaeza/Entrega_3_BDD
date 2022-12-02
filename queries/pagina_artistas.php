@@ -110,12 +110,13 @@ session_start();
 
                     <?php
                     foreach ($dataCollected as $p) {
-                        echo "<tr> <td>$p[0]</td> <td>%p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>%p[4]</td> </tr>";
+                        echo "<tr> <td>$p[0]</td> <td>$p[1]</td> <td>$p[2]</td> <td>$p[3]</td> <td>$p[4]</td> </tr>";
                     }
                     ?>
 
                     <?php
                     /*ihn: require ya no se deberia colocar porque esta escrito antes*/
+                    require("../config/conexion.php");
                     $query = "SELECT DISTINCT id FROM tabla_ignacio_provisoria_propuestas;";
                     $result = $db -> prepare($query);
                     $result -> execute();
@@ -166,3 +167,4 @@ session_start();
         </table>   
     </body>
 </html>         
+/*ihn: ultimo cambio 1:39 02-12-2022*/ 
